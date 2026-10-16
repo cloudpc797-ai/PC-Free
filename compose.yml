@@ -1,0 +1,17 @@
+services:
+  windows:
+    image: dockurr/windows:latest
+    container_name: pc-free-windows
+    environment:
+      VERSION: ${WINDOWS_VERSION:-10}
+      RAM_SIZE: ${WINDOWS_RAM:-4G}
+      CPU_CORES: ${WINDOWS_CPUS:-2}
+      DISK_SIZE: ${WINDOWS_DISK:-64G}
+    cap_add:
+      - NET_ADMIN
+    ports:
+      - "8006:8006"
+    volumes:
+      - ./windows:/storage
+    stop_grace_period: 2m
+    restart: unless-stopped
