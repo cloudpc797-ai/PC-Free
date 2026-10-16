@@ -4,7 +4,6 @@
   "features": {
     "ghcr.io/devcontainers/features/docker-in-docker:2": {}
   },
-  "privileged": true,
   "forwardPorts": [
     8006
   ],
@@ -17,5 +16,8 @@
   },
   "postCreateCommand": "bash .devcontainer/setup.sh",
   "postStartCommand": "bash scripts/start-windows.sh",
-  "remoteUser": "vscode"
+  "remoteUser": "vscode",
+  "runArgs": [
+    "--privileged"
+  ]
 }
