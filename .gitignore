@@ -1,0 +1,3 @@
+# Local Windows VM data and settings
+.env
+windows/
